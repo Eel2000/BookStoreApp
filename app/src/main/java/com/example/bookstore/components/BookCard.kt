@@ -2,6 +2,7 @@ package com.example.bookstore.components
 
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
@@ -24,10 +25,11 @@ fun BookCard(
 ) {
     Column(horizontalAlignment = Alignment.CenterHorizontally) {
         Card(
-            shape = RoundedCornerShape(5.dp),
+            shape = RoundedCornerShape(10.dp),
             modifier = Modifier
-                .height(200.dp)
-                .width(110.dp),
+                .height(250.dp)
+                .width(165.dp)
+                .clickable { /*TODO : put action on clicking the book's cover */ },
             elevation = 10.dp
         ) {
             Box(
