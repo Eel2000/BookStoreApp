@@ -30,7 +30,7 @@ fun BestSellerCard(
                 .height(200.dp)
                 .width(115.dp)
                 .clickable { /*TODO : put action on clicking the book's cover */ },
-            elevation = 10.dp
+            //elevation = 10.dp
         ) {
             Box(
                 modifier = Modifier

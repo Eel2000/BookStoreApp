@@ -5,8 +5,11 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Scaffold
 import androidx.compose.material.Surface
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -19,14 +22,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             BookStoreTheme {
                 // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .size(10.dp),
-                    color = MaterialTheme.colors.background
-                ) {
-                    Dashboard()
-                }
+                MainApplication()
             }
         }
     }
@@ -48,6 +44,17 @@ private  val BestsellerData = listOf(
     Books(title = "Spaw", author = "Rosie Scott", cover = R.drawable.spawn),
     Books(title = "Shades of shadows", author = "Lumen", cover = R.drawable.shades_of_shadows),
 )
+
+@Composable
+fun MainApplication(){
+    Scaffold(
+        bottomBar = {
+            BottomBarNavigation()
+        }
+    ) {
+        Dashboard()
+    }
+}
 
 @Composable
 fun Dashboard(){
@@ -107,5 +114,29 @@ fun HeadAccountAndSearchPreview(){
 fun MyLibrarySectionPreview(){
     BookStoreTheme {
         MyLibrarySection(books = BooksStore, sectionTitle = "My Library")
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun BestSellersSectionPreview(){
+    BookStoreTheme {
+        BestsellerSection(books = BestsellerData, sectionTitle = "Bestsellers")
+    }
+}
+
+@Preview()
+@Composable
+fun BottomBarNavigationPreview(){
+    BookStoreTheme {
+        BottomBarNavigation()
+    }
+}
+
+@Preview
+@Composable
+fun MainApplicationPreview(){
+    BookStoreTheme {
+        MainApplication()
     }
 }
