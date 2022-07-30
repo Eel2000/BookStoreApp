@@ -37,7 +37,7 @@ fun BestsellerSection(
                 text = sectionTitle,
                 style = MaterialTheme.typography.h5,
                 modifier = Modifier
-                    .padding(top = 20.dp, bottom = 5.dp)
+                    .padding(top = 20.dp, bottom = 10.dp)
                     .padding(horizontal = 16.dp),
                 fontWeight = FontWeight.Bold
             )
@@ -48,29 +48,21 @@ fun BestsellerSection(
                 fontStyle = FontStyle.Italic,
                 color = Color.Gray,
                 modifier = Modifier
-                    .padding(top = 20.dp, bottom = 5.dp)
+                    .padding(top = 20.dp, bottom = 10.dp)
                     .padding(horizontal = 16.dp)
             )
 
         }
 
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .weight(1f),
-            verticalAlignment = Alignment.CenterVertically
+        LazyRow(
+            horizontalArrangement = Arrangement.spacedBy(16.dp),
+            contentPadding = PaddingValues(horizontal = 16.dp)
         ) {
-            LazyRow(
-                horizontalArrangement = Arrangement.spacedBy(16.dp),
-                contentPadding = PaddingValues(horizontal = 16.dp)
-            ) {
-                items(books) { item ->
-                    BookCard(
-                        bookCover = item.cover
-                    )
-                }
+            items(books) { item ->
+                BestsellerSectionContent(
+                    bookCover = item.cover
+                )
             }
-
         }
     }
 }
