@@ -13,6 +13,6 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun BestsellerSectionContent(@DrawableRes bookCover: Int){
     Column (modifier = Modifier.background(Color.White)){
-        BookCard(bookCover = bookCover)
+        BestSellerCard(bookCover = bookCover)
     }
 }

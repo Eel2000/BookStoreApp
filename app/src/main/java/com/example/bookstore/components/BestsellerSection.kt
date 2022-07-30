@@ -37,7 +37,7 @@ fun BestsellerSection(
                 text = sectionTitle,
                 style = MaterialTheme.typography.h5,
                 modifier = Modifier
-                    .padding(top = 20.dp, bottom = 5.dp)
+                    .padding(top = 20.dp, bottom = 10.dp)
                     .padding(horizontal = 16.dp),
                 fontWeight = FontWeight.Bold
             )
@@ -48,7 +48,7 @@ fun BestsellerSection(
                 fontStyle = FontStyle.Italic,
                 color = Color.Gray,
                 modifier = Modifier
-                    .padding(top = 20.dp, bottom = 5.dp)
+                    .padding(top = 20.dp, bottom = 10.dp)
                     .padding(horizontal = 16.dp)
             )
 
