@@ -25,7 +25,7 @@ class MainActivity : ComponentActivity() {
                         .size(10.dp),
                     color = MaterialTheme.colors.background
                 ) {
-
+                    Dashboard()
                 }
             }
         }

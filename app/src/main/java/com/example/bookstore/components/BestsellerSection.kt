@@ -54,23 +54,15 @@ fun BestsellerSection(
 
         }
 
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .weight(1f),
-            verticalAlignment = Alignment.CenterVertically
+        LazyRow(
+            horizontalArrangement = Arrangement.spacedBy(16.dp),
+            contentPadding = PaddingValues(horizontal = 16.dp)
         ) {
-            LazyRow(
-                horizontalArrangement = Arrangement.spacedBy(16.dp),
-                contentPadding = PaddingValues(horizontal = 16.dp)
-            ) {
-                items(books) { item ->
-                    BookCard(
-                        bookCover = item.cover
-                    )
-                }
+            items(books) { item ->
+                BestsellerSectionContent(
+                    bookCover = item.cover
+                )
             }
-
         }
     }
 }
